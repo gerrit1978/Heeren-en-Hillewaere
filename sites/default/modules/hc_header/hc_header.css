@@ -1,0 +1,23 @@
+.block-hc-header {
+  position: relative;
+}
+
+.block-hc-header .header-content {
+  width: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.block-hc-header .header-content.right {
+  margin-left: 45%;
+} 
+
+.block-hc-header .header-content.left {
+  margin-left: 10%;
+}
+
+.block-hc-header .header-icon {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+}

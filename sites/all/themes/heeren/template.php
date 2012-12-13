@@ -53,8 +53,12 @@ function heeren_process_html(&$vars) {
 /**
  * Override or insert variables for the page templates.
  */
-/* -- Delete this line if you want to use these functions
 function heeren_preprocess_page(&$vars) {
+
+  if (TRUE) {
+    $vars['title'] = "";
+  }
+
 }
 function heeren_process_page(&$vars) {
 }
@@ -64,8 +68,37 @@ function heeren_process_page(&$vars) {
 /**
  * Override or insert variables into the node templates.
  */
-/* -- Delete this line if you want to use these functions
+
 function heeren_preprocess_node(&$vars) {
+
+  if (isset($vars['node']->field_blok)) {
+
+    $list = array();  
+    $blokken_field = field_get_items('node', $vars['node'],'field_blok');
+    
+    foreach ($blokken_field as $field_collection_id) {
+      $blok_array = entity_load('field_collection_item', array($field_collection_id['value']));
+
+      foreach ($blok_array as $blok) {
+        $blok_titel = field_get_items('field_collection_item', $blok, 'field_blok_titel');
+        $blok_text = field_get_items('field_collection_item', $blok, 'field_blok_tekst');
+        
+        $list[] = "<div class='blok'>"
+          . "<div class='title'>" . $blok_titel[0]['value'] . "</div>"
+          . "<div class='text'>" . $blok_text[0]['value'] . "</div>";
+        
+      }
+
+    }
+    
+    $vars['content']['blokken'] = array(
+      '#markup' => theme('item_list', array('items' => $list)),
+      '#prefix' => "<div class='blokken'>",
+      '#suffix' => "</div>"
+    );
+    
+  }
+
 }
 function heeren_process_node(&$vars) {
 }
