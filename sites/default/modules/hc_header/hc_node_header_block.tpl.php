@@ -1,6 +1,6 @@
 <?php if ($header_bg_image): ?>
 <div class='background'>
-  <img src='<?php print $header_bg_image; ?>' />
+  <?php print $header_bg_image; ?>
 </div>
 <?php endif; ?>
 
@@ -15,5 +15,5 @@
 <?php endif; ?>
 
 <?php if ($header_icon): ?>
-	<img src='<?php print $header_icon; ?>' />
+  <?php print $header_icon; ?>
 <?php endif; ?>
