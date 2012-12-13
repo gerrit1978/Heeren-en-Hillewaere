@@ -1,0 +1,135 @@
+<?php
+
+/************************************************************************
+ * Drupal Hooks
+ ************************************************************************/
+
+
+/**
+ * Implements hook_block_info
+ */
+function hc_header_block_info() {
+  $blocks = array();
+  
+  $blocks['header'] = array(
+    'info' => t('Header Block with image, text, icon...'),
+  );
+  
+  return $blocks;
+}
+
+
+
+/**
+ * Implements hook_block_view
+ */
+function hc_header_block_view($delta = "") {
+	$block = array();
+	
+	switch ($delta) {
+	  case 'header':
+	    $block['title'] = t('Header Block here');
+	    $block['content'] = array(
+	      '#markup' => _hc_header_render_block_header(),
+	    );
+	    break;
+	}
+	
+	return $block;
+}
+
+
+/**
+ * Implements hook_theme
+ */
+function hc_header_theme($existing, $type, $theme, $path) {
+  return array(
+    'header_block' => array(
+      'variables' => array('node' => NULL),
+      'template' => 'hc_header_block',
+    ),
+  );
+}
+
+
+/************************************************************************
+ * Theme preprocess functions
+ ************************************************************************/
+
+function template_preprocess_header_block(&$vars) {
+	$node = $vars['node'];
+	
+	switch ($node->type) {
+	  case 'page':
+	  default:
+	    $field = 'field_header';
+	    $field_title = 'field_header_titel';
+	    $field_text = 'field_header_text';
+	    $field_bg_image = 'field_header_bg_image';
+	    $field_icon = 'field_header_icoon';
+	    
+	    break;
+	  case 'homepage':
+	    $field = 'field_home_header';
+	    $field_title = 'field_home_header_titel';
+	    $field_text = 'field_home_header_text';
+	    $field_bg_image = 'field_home_header_bg_image';
+	    break;
+	}
+	
+	$vars['header_title'] = '';
+	$vars['header_text'] = '';
+	$vars['header_bg_image'] = '';
+	$vars['header_icon'] = '';
+	
+	$header_field = field_get_items('node', $node, $field);
+	$header_field_id = $header_field[0]['value'];
+	
+	if ($header_field) {
+		$entity_array = entity_load('field_collection_item', array($header_field_id));
+		
+		foreach ($entity_array as $entity) {
+  		$field_text_field = field_get_items('field_collection_item', $entity, $field_text);	
+  		$field_title_field = field_get_items('field_collection_item', $entity, $field_title);	
+  		$field_bg_image_field = field_get_items('field_collection_item', $entity, $field_bg_image);	
+  		
+			if (isset($field_icon)) {
+	  		$field_icon_field = field_get_items('field_collection_item', $entity, $field_icon);				
+			}
+
+			$vars['header_title'] = $field_title_field[0]['value'];
+			$vars['header_text'] = $field_text_field[0]['value'];
+			
+			if (isset($field_bg_image_field[0]['uri'])) {
+			  $vars['header_bg_image'] = image_style_url('header', $field_bg_image_field[0]['uri']);
+			} 
+			
+			if (isset($field_icon_field[0]['uri'])) {
+			  $vars['header_icon'] = image_style_url('full', $field_icon_field[0]['uri']);
+			}
+
+
+		}
+
+	}
+
+}
+
+
+/************************************************************************
+ * Helper and rendering functions
+ ************************************************************************/
+
+/**
+ * Render main header block
+ */
+function _hc_header_render_block_header() {
+
+	if (arg(0) == 'node' && is_numeric(arg(1))) {
+	  $node = node_load(arg(1));
+	}
+	
+	$output = theme('header_block', array('node' => $node));
+	
+  return $output;
+}
