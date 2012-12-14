@@ -85,10 +85,13 @@ function heeren_preprocess_node(&$vars) {
 	        $blok_titel = field_get_items('field_collection_item', $blok, 'field_blok_titel');
 	        $blok_text = field_get_items('field_collection_item', $blok, 'field_blok_tekst');
 	        
-	        $list[] = "<div class='blok'>"
+	        $data = "<div class='blok'>"
 	          . "<div class='title'>" . $blok_titel[0]['value'] . "</div>"
 	          . "<div class='text'>" . $blok_text[0]['value'] . "</div>";
 	        
+	        $list[] = array(
+  	        'data' => $data,
+	        );
 	      }
 	
 	    }

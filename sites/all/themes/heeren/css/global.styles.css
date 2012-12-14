@@ -1697,6 +1697,11 @@ tr.error {}
   width: 40%;
   float: left;
   margin-right: 5%;
+  margin-bottom: 25px;
+}
+
+.blokken .item-list ul li.even {
+  clear: left;
 }
 
 .blokken .item-list ul li .title {
@@ -1704,7 +1709,7 @@ tr.error {}
   font-size: 1.143em;
   font-weight: 300;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .blokken .item-list ul li .text {
