@@ -435,7 +435,11 @@ ul.links li {
 /*
  * Footer region
  */
-.region-footer {}
+.region-footer {
+  height: 410px;
+  overflow: hidden;
+  background: #eef0f0;
+}
 
 
 /* =============================================================================
