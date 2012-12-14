@@ -1,5 +1,10 @@
 .block-hc-header {
   position: relative;
+  height: 305px;
+}
+
+.block-hc-header .block-inner {
+  margin: 0;
 }
 
 .block-hc-header .header-content {
@@ -9,7 +14,7 @@
 }
 
 .block-hc-header .header-content.right {
-  margin-left: 45%;
+  margin-left: 48%;
 } 
 
 .block-hc-header .header-content.left {

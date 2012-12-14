@@ -415,7 +415,12 @@ ul.links li {
 /*
  * First sidebar
  */
-.region-sidebar-first {}
+.region-sidebar-first {
+}
+
+.region-sidebar-first .region-inner {
+  margin: 0 30px;
+}
 
 /*
  * Second sidebar
@@ -532,19 +537,6 @@ a:focus {
   text-transform: uppercase;
 }
 
-#block-system-main-menu li.expanded ul {
-  display: none;
-  position: absolute;
-  background: white;
-  z-index: 10000;
-}
-
-#block-system-main-menu li.expanded ul li {
-  float: none;
-  margin: 0;
-  
-}
-
 #block-system-main-menu ul li {
   list-style: none;
   float: left;
@@ -553,6 +545,32 @@ a:focus {
 
 #block-system-main-menu ul li.last {
   margin-right: 0;
+}
+
+#block-system-main-menu ul li.expanded ul {
+  display: none;
+  position: absolute;
+  background: url(images/bg-submenu.png) repeat;
+  z-index: 10000;
+  width: 140px;
+  padding-top: 5px;
+}
+
+#block-system-main-menu li.expanded ul li {
+  float: none;
+  margin: 0;
+  padding: 5px 10px;
+  border-bottom: 1px solid black;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+#block-system-main-menu li.expanded ul li.last {
+  border-bottom: none;
+}
+
+#block-system-main-menu li.expanded ul li a {
+  text-transform: none;
 }
 
 /* If li.content exists it's a problem, so reset the padding */
@@ -1671,6 +1689,10 @@ tr.error {}
  *   Misc styles
  * ========================================================================== */
 
+
+/*
+ * "Blokken" tekst op pagina's
+ */
 .blokken .item-list ul li {
   width: 40%;
   float: left;
@@ -1687,4 +1709,47 @@ tr.error {}
 
 .blokken .item-list ul li .text {
   width: 80%;
+}
+
+
+/**
+ * Menu-block (submenu)
+ */
+.block-menu-block {
+}
+
+.block-menu-block .block-inner {
+  background: #94b046;
+  margin: 0 5px;
+}
+
+.block-menu-block .block-inner ul.menu {
+  padding: 0;
+  margin: 0;
+}
+
+.block-menu-block .block-inner ul.menu li {
+  list-style: none;
+  border-bottom: 1px solid #bdce8c;
+  margin: 0;
+  height: 35px;
+  line-height: 35px;
+}
+
+.block-menu-block .block-inner ul.menu li.last {
+  border: none;
+}
+
+.block-menu-block .block-inner ul.menu li a {
+  color: #ffffff;
+  font-weight: 600;
+  display: block;
+  padding-left: 10px;
+}
+
+.block-menu-block .block-inner ul.menu li a:hover,
+.block-menu-block .block-inner ul.menu li a.active,
+.block-menu-block .block-inner ul.menu li a.active-trail {
+  text-decoration: none;
+  background: #555555;
 }

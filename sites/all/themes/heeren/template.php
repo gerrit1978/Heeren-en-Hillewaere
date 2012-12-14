@@ -76,20 +76,24 @@ function heeren_preprocess_node(&$vars) {
     $list = array();  
     $blokken_field = field_get_items('node', $vars['node'],'field_blok');
     
-    foreach ($blokken_field as $field_collection_id) {
-      $blok_array = entity_load('field_collection_item', array($field_collection_id['value']));
+    if (is_array($blokken_field) && count($blokken_field)) {
+    
+	    foreach ($blokken_field as $field_collection_id) {
+	      $blok_array = entity_load('field_collection_item', array($field_collection_id['value']));
+	
+	      foreach ($blok_array as $blok) {
+	        $blok_titel = field_get_items('field_collection_item', $blok, 'field_blok_titel');
+	        $blok_text = field_get_items('field_collection_item', $blok, 'field_blok_tekst');
+	        
+	        $list[] = "<div class='blok'>"
+	          . "<div class='title'>" . $blok_titel[0]['value'] . "</div>"
+	          . "<div class='text'>" . $blok_text[0]['value'] . "</div>";
+	        
+	      }
+	
+	    }
 
-      foreach ($blok_array as $blok) {
-        $blok_titel = field_get_items('field_collection_item', $blok, 'field_blok_titel');
-        $blok_text = field_get_items('field_collection_item', $blok, 'field_blok_tekst');
-        
-        $list[] = "<div class='blok'>"
-          . "<div class='title'>" . $blok_titel[0]['value'] . "</div>"
-          . "<div class='text'>" . $blok_text[0]['value'] . "</div>";
-        
-      }
-
-    }
+		}
     
     $vars['content']['blokken'] = array(
       '#markup' => theme('item_list', array('items' => $list)),
