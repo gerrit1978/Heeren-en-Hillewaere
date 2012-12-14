@@ -26,3 +26,15 @@
   bottom: -30px;
   left: 50%;
 }
+
+.block-hc-header .header-content.wit, 
+.block-hc-header .header-content.wit a,
+.block-hc-header .header-content.wit h1 {
+  color: white;
+}
+
+.block-hc-header .header-content.donkergrijs, 
+.block-hc-header .header-content.donkergrijs a,
+.block-hc-header .header-content.donkergrijs h1 {
+  color: #555555;
+}

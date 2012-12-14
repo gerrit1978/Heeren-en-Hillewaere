@@ -4,7 +4,7 @@
 </div>
 <?php endif; ?>
 
-<div class='header-content <?php print $header_alignment; ?>'>
+<div class='header-content <?php print $header_classes; ?>'>
 
 <?php if ($header_title): ?>
 <h1><?php print $header_title; ?></h1>
