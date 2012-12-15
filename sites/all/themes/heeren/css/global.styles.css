@@ -1765,12 +1765,127 @@ tr.error {}
 
 
 /**
- * Blog
+ * Blog node and blog overview
  */
 .section-blog #columns {
   margin-top: 30px;
 }
 
 .section-blog #main-content {
-  margin-left: 110px;
+  margin-left: 150px;
+  width: 475px;
+}
+
+.section-blog #page-title {
+  font-size: 3.571em;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #333;
+}
+
+.section-blog .view-blog ul.posts {
+  margin: 0;
+  padding: 0;
+}
+
+.section-blog .view-blog ul.posts li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 35px;
+  border-bottom: 1px solid #b1b1b1;
+}
+
+.section-blog .view-blog ul.posts li .node-blog h2 a {
+	font-size: 1em;
+  color: #3b3b3b;
+  text-decoration: none;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.section-blog .view-blog ul.posts li .content p {
+  margin-bottom: 0;
+}
+
+.section-blog .view-blog ul.posts li a.read-more {
+  color: #94b046;
+}
+
+.section-blog .view-blog ul.posts li .submitted,
+.node-type-blog .submitted {
+  font-size: 0.857em;
+  margin-top: 15px;
+  color: #333333;
+}
+
+.node-type-blog #content {
+  margin-top: 30px
+}
+
+.node-type-blog #content #block-system-main {
+	margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b1b1b1;
+}
+
+.node-type-blog #content #block-system-main .blog-nav {
+  width: 50%;
+  float: left;
+  padding-top: 30px;
+}
+
+.node-type-blog #content #block-system-main .blog-nav.next-link {
+  text-align: right;
+  float: right;
+}
+
+/**
+ * Blog-block (archive)
+ */
+#block-views-blog-block-1 {
+  width: 180px;
+}
+
+#block-views-blog-block-1 h2.block-title {
+  font-size: 1em;
+  color: #333333;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+#block-views-blog-block-1 .block-inner .item-list {
+  background: #94b046;
+  margin: 10px 0;
+}
+
+#block-views-blog-block-1 .block-inner ul.views-summary {
+  padding: 0;
+  margin: 0;
+}
+
+#block-views-blog-block-1 .block-inner ul.views-summary li {
+  list-style: none;
+  border-bottom: 1px solid #bdce8c;
+  margin: 0;
+  height: 35px;
+  line-height: 35px;
+}
+
+#block-views-blog-block-1 .block-inner ul.views-summary li.last {
+  border: none;
+}
+
+#block-views-blog-block-1 .block-inner ul.views-summary li a {
+  color: #ffffff;
+  font-weight: 600;
+  display: block;
+  padding-left: 10px;
+}
+
+#block-views-blog-block-1 .block-inner ul.views-summary li a:hover,
+#block-views-blog-block-1 .block-inner ul.views-summary li a.active,
+#block-views-blog-block-1 .block-inner ul.views-summary li a.active-trail {
+  text-decoration: none;
+  background: #555555;
 }

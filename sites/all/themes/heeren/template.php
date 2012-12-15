@@ -21,49 +21,27 @@
  * 2. Uncomment the required function to use.
  */
 
-
-/**
- * Preprocess variables for the html template.
- */
-/* -- Delete this line to enable.
-function heeren_preprocess_html(&$vars) {
-  global $theme_key;
-
-  // Two examples of adding custom classes to the body.
-  
-  // Add a body class for the active theme name.
-  // $vars['classes_array'][] = drupal_html_class($theme_key);
-
-  // Browser/platform sniff - adds body classes such as ipad, webkit, chrome etc.
-  // $vars['classes_array'][] = css_browser_selector();
-
-}
-// */
-
-
-/**
- * Process variables for the html template.
- */
-/* -- Delete this line if you want to use this function
-function heeren_process_html(&$vars) {
-}
-// */
-
-
 /**
  * Override or insert variables for the page templates.
  */
 function heeren_preprocess_page(&$vars) {
 
 	// unset title if not in blog section
-  if (TRUE) {
+	$section_blog = FALSE;
+	// node type blog
+	if (isset($vars['node']->type) && $vars['node']->type == 'blog') {
+	  $section_blog = TRUE;
+	}
+	// blog view
+	if (arg(0) == 'blog') {
+	  $section_blog = TRUE;
+	}
+	// unset title
+	if (!$section_blog) {
     $vars['title'] = "";
   }
-
+  
 }
-function heeren_process_page(&$vars) {
-}
-// */
 
 
 /**
@@ -72,6 +50,7 @@ function heeren_process_page(&$vars) {
 
 function heeren_preprocess_node(&$vars) {
 
+	// output the "blokken" as an item list instead of DIVs
   if (isset($vars['node']->field_blok)) {
 
     $list = array();  
@@ -96,7 +75,6 @@ function heeren_preprocess_node(&$vars) {
 	      }
 	
 	    }
-
 		}
     
     $vars['content']['blokken'] = array(
@@ -107,29 +85,55 @@ function heeren_preprocess_node(&$vars) {
     
   }
 
-}
-function heeren_process_node(&$vars) {
-}
-// */
+	// use specific tpl.php file and submitted format and read more link for (blog) teasers
+	if ($vars['view_mode'] == 'teaser') {
+		
+		// template file
+		$vars['theme_hook_suggestion'] = 'node__blog__teaser';
+		
+		// alter submitted text
+		$vars['submitted'] = t('posted on @date', array('@date' => format_date($vars['node']->created, 'very_short_streepjes')));
+		
+		// add "read more" link
+    $url = drupal_get_path_alias('node/' . $vars['node']->nid);
+		$link = l('Lees meer >>', $url, array('attributes' => array('class' => 'read-more')));
+		$vars['content']['read_more']['#markup'] = $link;
+		$vars['content']['read_more']['#weight'] = 100;
+	}
+	
+	// alter submitted text for blog nodes and create next - previous links
+	if ($vars['node']->type == 'blog') {
+		// alter submitted text
+		$vars['submitted'] = t('posted on @date', array('@date' => format_date($vars['node']->created, 'very_short_streepjes')));
+			
+		// create next - previous links
+		$vars['previous_link'] = '';
+		$vars['next_link'] = '';
+		// first, get a list of nids for blog posts
+		$nids = array();
+		$result = db_query("SELECT nid FROM {node} WHERE type = 'blog' ORDER BY nid ASC;");
+		foreach ($result as $row) {
+		  $nids[] = $row->nid; 
+		}
 
+		// get the key of the current node		
+		$key = array_search($vars['node']->nid, $nids);
+		
+		
+		if (isset($nids[$key - 1])) {
+			$link = l('<< vorige', 'node/' . $nids[$key - 1]);
+			$vars['previous_link']['#markup'] = $link;
+			$vars['previous_link']['#prefix'] = "<div class='prev-link blog-nav'>";
+			$vars['previous_link']['#suffix'] = "</div>";
+		}
+		
+		if (isset($nids[$key + 1])) {
+			$link = l('volgende >>', 'node/' . $nids[$key + 1]);		
+			$vars['next_link']['#markup'] = $link;
+			$vars['next_link']['#prefix'] = "<div class='next-link blog-nav'>";
+			$vars['next_link']['#suffix'] = "</div>";
+		}
+		
+	}
 
-/**
- * Override or insert variables into the comment templates.
- */
-/* -- Delete this line if you want to use these functions
-function heeren_preprocess_comment(&$vars) {
 }
-function heeren_process_comment(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the block templates.
- */
-/* -- Delete this line if you want to use these functions
-function heeren_preprocess_block(&$vars) {
-}
-function heeren_process_block(&$vars) {
-}
-// */
