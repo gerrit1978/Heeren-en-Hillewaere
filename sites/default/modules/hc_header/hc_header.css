@@ -8,9 +8,9 @@
 }
 
 .block-hc-header .header-content {
-  width: 50%;
+  width: 45%;
   position: absolute;
-  top: 0;
+  top: 25px;
 }
 
 .block-hc-header .header-content.right {
@@ -18,7 +18,7 @@
 } 
 
 .block-hc-header .header-content.left {
-  margin-left: 10%;
+  margin-left: 75px;
 }
 
 .block-hc-header .header-icon {

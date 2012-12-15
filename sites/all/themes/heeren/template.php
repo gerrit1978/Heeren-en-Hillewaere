@@ -55,6 +55,7 @@ function heeren_process_html(&$vars) {
  */
 function heeren_preprocess_page(&$vars) {
 
+	// unset title if not in blog section
   if (TRUE) {
     $vars['title'] = "";
   }

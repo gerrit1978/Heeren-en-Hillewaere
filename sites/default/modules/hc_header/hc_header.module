@@ -141,6 +141,7 @@ function template_preprocess_home_header_block(&$vars) {
 	$vars['header_title'] = '';
 	$vars['header_text'] = '';
 	$vars['header_bg_image'] = '';
+	$vars['header_classes'] = '';
 
 	$header_field = field_get_items('node', $node, 'field_home_header');
 	$header_field_id = $header_field[0]['value'];
@@ -151,9 +152,23 @@ function template_preprocess_home_header_block(&$vars) {
 		$field_text_field = field_get_items('field_collection_item', $entity, 'field_home_header_text');	
 		$field_title_field = field_get_items('field_collection_item', $entity, 'field_home_header_titel');	
 		$field_bg_image_field = field_get_items('field_collection_item', $entity, 'field_home_header_bg_image');	
+		$field_alignment_field = field_get_items('field_collection_item', $entity, 'field_home_header_uitlijning');
+		$field_text_color_field = field_get_items('field_collection_item', $entity, 'field_home_header_tekstkleur');
 
 		$vars['header_title'] = $field_title_field[0]['value'];
 		$vars['header_text'] = $field_text_field[0]['value'];
+
+		// add alignment class
+		$classes[] = $field_alignment_field[0]['value'];
+		
+		// text color class
+		$term = taxonomy_term_load($field_text_color_field[0]['tid']);
+		if ($term) {
+			$classes[] = strtolower($term->name);		
+		}
+
+		$vars['header_classes'] = implode(' ', $classes);
+
 		
 		if (isset($field_bg_image_field[0]['uri'])) {
 		  $vars['header_bg_image'] = theme('image', array('path' => image_style_url('header', $field_bg_image_field[0]['uri'])));

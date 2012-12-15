@@ -252,7 +252,7 @@ var {
  */
 #logo {
   position: absolute;
-  left: 75px;
+  left: 65px;
 }
 
 #logo img {
@@ -1761,4 +1761,16 @@ tr.error {}
 .block-menu-block .block-inner ul.menu li a.active-trail {
   text-decoration: none;
   background: #555555;
+}
+
+
+/**
+ * Blog
+ */
+.section-blog #columns {
+  margin-top: 30px;
+}
+
+.section-blog #main-content {
+  margin-left: 110px;
 }
