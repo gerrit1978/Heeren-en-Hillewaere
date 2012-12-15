@@ -1825,14 +1825,18 @@ tr.error {}
 
 .node-type-blog #content #block-system-main {
 	margin-bottom: 30px;
-  padding-bottom: 20px;
+}
+
+.node-type-blog #content .submitted {
   border-bottom: 1px solid #b1b1b1;
+  padding-bottom: 20px;
 }
 
 .node-type-blog #content #block-system-main .blog-nav {
   width: 50%;
   float: left;
   padding-top: 30px;
+  font-weight: 600;
 }
 
 .node-type-blog #content #block-system-main .blog-nav.next-link {
@@ -1888,4 +1892,30 @@ tr.error {}
 #block-views-blog-block-1 .block-inner ul.views-summary li a.active-trail {
   text-decoration: none;
   background: #555555;
+}
+
+
+/**
+ * Footer blocks
+ */
+#block-block-1 {
+  padding-left: 30px;
+  background: #dfe2e2;
+  width: 385px;
+  float: left;
+  color: #3b3b3b;
+}
+
+#block-block-1 .sm {
+  margin-top: 10px;
+  float: left;
+}
+
+#block-block-1 .logo {
+  float: left;
+  width: 240px;
+}
+
+#block-block-1 .adres {
+  margin-top: 30px;
 }
