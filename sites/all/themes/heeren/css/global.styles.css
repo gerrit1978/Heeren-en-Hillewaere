@@ -2048,3 +2048,7 @@ tr.error {}
   width: 45%;
   float: left;
 }
+
+.section-contact .newsletter-block {
+  clear: both;
+}
