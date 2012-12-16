@@ -1919,3 +1919,47 @@ tr.error {}
 #block-block-1 .adres {
   margin-top: 30px;
 }
+
+/**
+ * Footer menu
+ */
+#block-menu-menu-footer-menu {
+  padding-top: 50px;
+}
+
+ 
+#block-menu-menu-footer-menu ul {
+  margin: 0;
+  padding: 0;
+} 
+ 
+#block-menu-menu-footer-menu ul li {
+  float: left;
+  list-style: none;
+  margin-right: 5px;
+}
+
+#block-menu-menu-footer-menu ul li a {
+  color: #072959;
+}
+
+#block-menu-menu-footer-menu ul li a.active,
+#block-menu-menu-footer-menu ul li a.active-trail {
+  font-weight: 600;
+}
+
+#block-menu-menu-footer-menu ul li.expanded {
+  font-weight: 600;
+  width: 180px;
+}
+
+#block-menu-menu-footer-menu ul li.expanded ul li {
+  float: none;
+  list-style-image: url(images/disc.jpg);
+  list-style-position: inside;
+  line-height: 30px;
+  border-bottom: 1px solid #e3e8e8;
+  font-weight: 300;
+  height: 30px;
+  width: 180px;
+}
