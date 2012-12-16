@@ -1963,3 +1963,88 @@ tr.error {}
   height: 30px;
   width: 180px;
 }
+
+
+/**
+ * Contact
+ */
+.section-contact {
+}
+
+.section-contact .block-hc-header {
+  margin-bottom: 0;
+  height: 305px;
+  overflow: hidden;
+}
+
+.section-contact #main-content {
+  margin: 0;
+}
+
+.section-contact #main-content form.webform-client-form {
+  background: #f4f4f4;
+	margin-left: 515px;  
+	padding: 80px 155px 95px 40px;
+}
+
+.section-contact #main-content form.webform-client-form label {
+  color: #7a7a7a;
+  font-weight: 300;
+}
+
+.section-contact #main-content form.webform-client-form .form-text {
+  height: 45px;
+  line-height: 45px;
+}
+
+.section-contact #main-content form.webform-client-form .form-text, 
+.section-contact #main-content form.webform-client-form .form-textarea {
+  width: 300px;
+  padding-left: 10px;
+  border: 1px solid #c9c9c9;
+}
+
+.section-contact #main-content form.webform-client-form .form-textarea {
+  width: 310px;
+  height: 150px;
+  padding-top: 10px;
+}
+
+.section-contact #main-content form.webform-client-form .form-submit {
+  width: auto; 
+  background: #072959; 
+  border: 1px solid #1e728c; 
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  color: white;
+  cursor: pointer;
+  display: inline-block; 
+  font-family: inherit; 
+  font-size: 14px; 
+  font-weight: 300; 
+  line-height: 1; 
+  margin: 0; 
+  padding: 10px 20px 11px; 
+  position: relative; 
+  text-align: center; 
+  text-decoration: none; 
+  -webkit-transition: background-color 0.15s ease-in-out; 
+  -moz-transition: background-color 0.15s ease-in-out; 
+  -o-transition: background-color 0.15s ease-in-out; 
+  transition: background-color 0.15s ease-in-out; 
+}
+
+.section-contact #main-content .field-name-body {
+  width: 515px;
+  float: left;
+  padding-top: 85px;
+  padding-left: 35px;
+}
+
+.section-contact #main-content .address {
+  background: url(images/bg-adres.jpg) no-repeat left top;
+  padding-top: 65px;
+  width: 45%;
+  float: left;
+}

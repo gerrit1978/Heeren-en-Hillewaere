@@ -7,6 +7,11 @@
   margin: 0;
 }
 
+.block-hc-header .header-background {
+  height: 305px;
+  overflow: hidden;
+}
+
 .block-hc-header .header-content {
   width: 45%;
   position: absolute;
