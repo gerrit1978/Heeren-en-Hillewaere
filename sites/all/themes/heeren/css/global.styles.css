@@ -2074,6 +2074,8 @@ tr.error {}
 
 #block-webform-client-block-17 .webform-client-form fieldset {
   border: none;
+  margin: 0;
+  padding: 10px 0;
 }
 
 #block-webform-client-block-17 .webform-client-form .webform-component {
@@ -2110,7 +2112,7 @@ tr.error {}
 }
 
 #block-webform-client-block-17 .webform-client-form .form-submit {
-  width: auto; 
+  width: 170px; 
   background: #94b046; 
   border: 1px solid #94b046; 
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
@@ -2134,15 +2136,35 @@ tr.error {}
   transition: background-color 0.15s ease-in-out; 
 }
 
+#block-webform-client-block-17 .webform-client-form #edit-next {
+  margin-left: 270px;
+  margin-bottom: 15px;
+  width: auto;
+}
+
+#block-webform-client-block-17 .webform-client-form #edit-previous {
+  margin-left: 90px;
+  margin-bottom: 15px;
+}
+
+#block-webform-client-block-17 .webform-client-form #edit-submit {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
 #block-webform-client-block-17 .tabs ul li {
   list-style: none;
   float: left;
   background: #f4f4f4;
   padding: 10px 20px;
   margin-right: 10px;
-  width: 220px;
+  width: 210px;
 }
 
 #block-webform-client-block-17 .tabs ul li.auto-gegevens {
   background: #cfcfcf;
+}
+
+#block-webform-client-block-17 #webform-component-auto-gegevens--aftrekpercentage {
+  margin-left: 270px;
 }
