@@ -2052,3 +2052,97 @@ tr.error {}
 .section-contact .newsletter-block {
   clear: both;
 }
+
+/** Offerteformulier Voertuigen **/
+#block-webform-client-block-17 h2.node-title {
+  font-size: 2.286em;
+  color: #000000;
+  font-weight: 300;
+}
+
+#block-webform-client-block-17 .block-inner {
+  margin: 0;
+}
+
+#block-webform-client-block-17 .webform-client-form {
+  background: #f4f4f4;
+}
+
+#block-webform-client-block-17 .webform-client-form .form-item {
+  margin-bottom: 25px;
+}
+
+#block-webform-client-block-17 .webform-client-form fieldset {
+  border: none;
+}
+
+#block-webform-client-block-17 .webform-client-form .webform-component {
+  clear: both;
+}
+
+#block-webform-client-block-17 .webform-client-form .webform-component label {
+	width: 260px;
+	text-align: right;
+	float: left;
+	margin-right: 10px;
+	color: #7a7a7a;
+	font-weight: 300;
+	clear: left;
+}
+
+#block-webform-client-block-17 .webform-client-form .webform-component .form-radios label {
+  width: auto;
+  float: none;
+}
+
+#block-webform-client-block-17 .webform-client-form .webform-component .form-type-radio {
+  width: auto;
+	display: block;
+	margin-left: 270px;
+	float: none;
+	margin-bottom: 5px;
+}
+
+#block-webform-client-block-17 .webform-client-form .webform-component .form-text {
+  width: 230px;
+  border: 1px solid #dddddd;
+  padding: 5px;
+}
+
+#block-webform-client-block-17 .webform-client-form .form-submit {
+  width: auto; 
+  background: #94b046; 
+  border: 1px solid #94b046; 
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  color: white;
+  cursor: pointer;
+  display: inline-block; 
+  font-family: inherit; 
+  font-size: 14px; 
+  font-weight: 300; 
+  line-height: 1; 
+  margin: 0; 
+  padding: 10px 20px 11px; 
+  position: relative; 
+  text-align: center; 
+  text-decoration: none; 
+  -webkit-transition: background-color 0.15s ease-in-out; 
+  -moz-transition: background-color 0.15s ease-in-out; 
+  -o-transition: background-color 0.15s ease-in-out; 
+  transition: background-color 0.15s ease-in-out; 
+}
+
+#block-webform-client-block-17 .tabs ul li {
+  list-style: none;
+  float: left;
+  background: #f4f4f4;
+  padding: 10px 20px;
+  margin-right: 10px;
+  width: 220px;
+}
+
+#block-webform-client-block-17 .tabs ul li.auto-gegevens {
+  background: #cfcfcf;
+}
