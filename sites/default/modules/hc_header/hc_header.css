@@ -15,7 +15,7 @@
 .block-hc-header .header-content {
   width: 45%;
   position: absolute;
-  top: 25px;
+  top: 15px;
 }
 
 .block-hc-header .header-content.right {
@@ -28,7 +28,7 @@
 
 .block-hc-header .header-icon {
   position: absolute;
-  bottom: -30px;
+  bottom: -40px;
   left: 50%;
 }
 
@@ -42,4 +42,8 @@
 .block-hc-header .header-content.donkergrijs a,
 .block-hc-header .header-content.donkergrijs h1 {
   color: #555555;
+}
+
+#block-hc-header-home-header {
+  margin-bottom: 0;
 }

@@ -2013,7 +2013,7 @@ tr.error {}
 .section-contact #main-content form.webform-client-form .form-submit {
   width: auto; 
   background: #072959; 
-  border: 1px solid #1e728c; 
+  border: 1px solid #072959; 
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
@@ -2167,4 +2167,106 @@ tr.error {}
 
 #block-webform-client-block-17 #webform-component-auto-gegevens--aftrekpercentage {
   margin-left: 270px;
+}
+
+
+/** Front page **/
+body.front #main-content {
+  margin: 0;
+}
+
+body.front .field-collection-view,
+body.front .field-collection-container {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body.front .field-collection-container .field-items .field-item {
+  margin: 0;
+  padding: 0;
+}
+
+body.front .home-blok .title {
+  width: auto;
+  height: 100px;
+  overflow: hidden;
+  font-family: Georgia, serif;
+  color: #94b046;
+  font-size: 1.928em;
+  font-style: italic;
+  line-height: 100px;
+}
+
+body.front .home-blok .title .icon,
+body.front .home-blok .title .titel {
+  display: inline;
+  width: auto;
+  float: left;
+}
+
+body.front .home-blok .content {
+  position: relative;
+}
+
+body.front .home-blok .content .text {
+	position: absolute;
+	top: 40px;
+	width: 450px;
+}
+
+body.front .home-blok .content.rechts .text {
+	left: 475px;
+}
+
+body.front .home-blok .content.links .text {
+  left: 20px;
+}
+
+body.front .home-blok .content .text.wit {
+  color: white; 
+}
+
+body.front .home-blok .content .text.donkergrijs {
+  color: #1e1e1e;
+}
+
+body.front .home-blok .content .link {
+  position: absolute;
+  bottom: 20px;
+  min-width: 275px;
+}
+
+body.front .home-blok .content.rechts .link {
+  left: 475px;
+}
+
+body.front .home-blok .content.links .link {
+  left: 20px;
+}
+
+
+body.front .home-blok .content .link a.button {
+  width: auto; 
+  background: #072959; 
+  border: 1px solid #072959; 
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  color: white;
+  cursor: pointer;
+  display: inline-block; 
+  font-family: inherit; 
+  font-size: 14px; 
+  font-weight: 300; 
+  line-height: 1; 
+  margin: 0; 
+  padding: 10px 20px 11px; 
+  position: relative; 
+  text-align: center; 
+  text-decoration: none; 
+  -webkit-transition: background-color 0.15s ease-in-out; 
+  -moz-transition: background-color 0.15s ease-in-out; 
+  -o-transition: background-color 0.15s ease-in-out; 
+  transition: background-color 0.15s ease-in-out; 
 }

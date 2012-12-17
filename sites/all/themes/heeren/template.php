@@ -46,7 +46,6 @@ function heeren_preprocess_page(&$vars) {
 /**
  * Override or insert variables into the node templates.
  */
-
 function heeren_preprocess_node(&$vars) {
 
 	// output the "blokken" as an item list instead of DIVs
