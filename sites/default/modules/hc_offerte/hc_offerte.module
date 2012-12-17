@@ -1,0 +1,35 @@
+<?php
+
+
+/**
+ * Implements hook_form_alter
+ */
+function hc_offerte_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'webform_client_form_17') {
+		$form['#submit'][] = 'hc_offerte_form_submit';
+  }
+}
+
+
+
+/**
+ * Custom submit function 
+ */
+function hc_offerte_form_submit($form, &$form_state) {
+
+  if (strstr($form_state['values']['op'], 'vorige')) {
+		$_REQUEST['offerte_back'] = TRUE;
+  }
+} 
+
+
+
+/** 
+ * Preprocess page
+ */
+function hc_offerte_preprocess_html(&$vars) {
+	if (isset($_REQUEST['offerte_back'])) {
+	  $path = drupal_get_path('module', 'hc_offerte');
+	  drupal_add_js($path . '/hc_offerte.js');
+	}
+}
