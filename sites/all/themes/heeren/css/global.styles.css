@@ -2189,64 +2189,71 @@ body.front .field-collection-container .field-items .field-item {
 
 body.front .home-blok .title {
   width: auto;
-  height: 100px;
   overflow: hidden;
   font-family: Georgia, serif;
   color: #94b046;
   font-size: 1.928em;
   font-style: italic;
-  line-height: 100px;
+  text-align: center;
+  height: 100px;
 }
 
 body.front .home-blok .title .icon,
 body.front .home-blok .title .titel {
-  display: inline;
+  display: inline-block;
   width: auto;
-  float: left;
 }
 
-body.front .home-blok .content {
+body.front .home-blok .title .titel {
+	position: relative;
+	top: -40px;
+}
+
+body.front .home-blok .content .main {
   position: relative;
 }
 
-body.front .home-blok .content .text {
+body.front .home-blok .content .main .image-fullsize img {
+  display: block;
+}
+
+body.front .home-blok .content .main .text {
 	position: absolute;
 	top: 40px;
 	width: 450px;
 }
 
-body.front .home-blok .content.rechts .text {
+body.front .home-blok .content.rechts .main .text {
 	left: 475px;
 }
 
-body.front .home-blok .content.links .text {
+body.front .home-blok .content.links .main .text {
   left: 20px;
 }
 
-body.front .home-blok .content .text.wit {
+body.front .home-blok .content .main .text.wit {
   color: white; 
 }
 
-body.front .home-blok .content .text.donkergrijs {
+body.front .home-blok .content .main .text.donkergrijs {
   color: #1e1e1e;
 }
 
-body.front .home-blok .content .link {
+body.front .home-blok .content .main .link {
   position: absolute;
   bottom: 20px;
   min-width: 275px;
 }
 
-body.front .home-blok .content.rechts .link {
+body.front .home-blok .content.rechts .main .link {
   left: 475px;
 }
 
-body.front .home-blok .content.links .link {
+body.front .home-blok .content.links .main .link {
   left: 20px;
 }
 
-
-body.front .home-blok .content .link a.button {
+body.front .home-blok .content .main .link a.button {
   width: auto; 
   background: #072959; 
   border: 1px solid #072959; 

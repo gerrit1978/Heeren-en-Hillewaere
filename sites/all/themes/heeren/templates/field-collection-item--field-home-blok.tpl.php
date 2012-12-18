@@ -32,14 +32,22 @@
  * TODO: move this stuff to a preprocess function!
  ***********************************************************************************************************************/
 // render icon - title alignment
+$icon_themed = theme('image', array('path' => $content['field_home_blok_titel_icon']['#items'][0]['uri']));
 $icon_alignment = $content['field_home_blok_icon_uitlijning']['#items'][0]['value'];
+
+// render title
+$title = $content['field_home_blok_titel']['#items'][0]['value'];
+
 if ($icon_alignment == 'links') {
-  $icon_title = "<div class='icon'>" . render($content['field_home_blok_titel_icon']) . "</div>"
-    . "<div class='titel'>" . render($content['field_home_blok_titel']) . "</div>";
+  $icon_title = "<div class='icon'>" . $icon_themed . "</div>"
+    . "<div class='titel'>" . $title . "</div>";
 } else {
-  $icon_title = "<div class='titel'>" . render($content['field_home_blok_titel']) . "</div>"
-    . "<div class='icon'>" . render($content['field_home_blok_titel_icon']) . "</div>";
+  $icon_title = "<div class='titel'>" . $title . "</div>"
+    . "<div class='icon'>" . $icon_themed . "</div>";
 }
+
+// render full size image
+$full_size_image_themed = theme('image', array('path' => $content['field_home_blok_full_size_pic']['#items'][0]['uri']));
 
 // render the link - TODO: move to a preprocess function
 $link_nid = $content['field_home_blok_link'][0]['#markup'];
@@ -61,13 +69,13 @@ $color = strtolower($content['field_home_blok_tekst_kleur'][0]['#markup']);
 ?>
 <div class="home-blok <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content <?php print $alignment; ?>"<?php print $content_attributes; ?>>
-		<div class="title">
+		<div class="title clearfix">
 			<?php print $icon_title; ?>
 		</div>
-		<div class="content">
+		<div class="main">
 		
 	    <div class="image-fullsize">
-	      <?php print render($content['field_home_blok_full_size_pic']); ?>
+	      <?php print $full_size_image_themed; ?>
 	    </div>
 	<!--
 	    <div class="image-smartphone"></div>
@@ -80,6 +88,6 @@ $color = strtolower($content['field_home_blok_tekst_kleur'][0]['#markup']);
 	    <div class="link">
 	      <?php print render($link); ?>
 	    </div>
-	  </div>
-  </div>
-</div>
+	  </div> 
+  </div>  <!-- content -->
+</div> <!-- home-blok -->
