@@ -2242,7 +2242,6 @@ body.front .home-blok .content .main .text.donkergrijs {
 body.front .home-blok .content .main .link {
   position: absolute;
   bottom: 20px;
-  min-width: 275px;
 }
 
 body.front .home-blok .content.rechts .main .link {
@@ -2253,8 +2252,7 @@ body.front .home-blok .content.links .main .link {
   left: 20px;
 }
 
-body.front .home-blok .content .main .link a.button {
-  width: auto; 
+body.front .home-blok .content .main .link a.deep-link {
   background: #072959; 
   border: 1px solid #072959; 
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
@@ -2265,7 +2263,7 @@ body.front .home-blok .content .main .link a.button {
   display: inline-block; 
   font-family: inherit; 
   font-size: 14px; 
-  font-weight: 300; 
+  font-weight: 600; 
   line-height: 1; 
   margin: 0; 
   padding: 10px 20px 11px; 
@@ -2276,4 +2274,5 @@ body.front .home-blok .content .main .link a.button {
   -moz-transition: background-color 0.15s ease-in-out; 
   -o-transition: background-color 0.15s ease-in-out; 
   transition: background-color 0.15s ease-in-out; 
+
 }

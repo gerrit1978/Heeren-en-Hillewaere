@@ -53,7 +53,7 @@ $full_size_image_themed = theme('image', array('path' => $content['field_home_bl
 $link_nid = $content['field_home_blok_link'][0]['#markup'];
 $link_title = $content['field_home_blok_link_titel'][0]['#markup'];
 $link = array(
-  '#markup' => l($link_title, 'node/' . $link_nid, array('attributes' => array('class' => 'button'))),
+  '#markup' => l($link_title, 'node/' . $link_nid, array('attributes' => array('class' => 'deep-link'))),
 );
 
 // render text alignment
