@@ -119,7 +119,9 @@ var {
  * Page wrapper, includes the .container class which sets the overall page or section width
  * Main wrapper in page.tpl.php, the .container class sets the width of the page, do not add width to it!
  */
-#page { }
+#page { 
+  background: white;
+}
 
 #page .container {}
 
