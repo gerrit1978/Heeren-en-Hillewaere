@@ -31,7 +31,7 @@
  */
 
 html {
-  background: #fff;
+  background: #ededed;
 }
 
 
@@ -2274,5 +2274,4 @@ body.front .home-blok .content .main .link a.deep-link {
   -moz-transition: background-color 0.15s ease-in-out; 
   -o-transition: background-color 0.15s ease-in-out; 
   transition: background-color 0.15s ease-in-out; 
-
 }
