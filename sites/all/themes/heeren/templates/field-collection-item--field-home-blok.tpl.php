@@ -83,11 +83,12 @@ $color = strtolower($content['field_home_blok_tekst_kleur'][0]['#markup']);
 	-->
 	    <div class="text <?php print $color; ?>">
 				<?php print render($content['field_home_blok_tekst']); ?>	      
+		    <div class="link">
+		      <?php print render($link); ?>
+		    </div>
+
 	    </div>
 	    
-	    <div class="link">
-	      <?php print render($link); ?>
-	    </div>
 	  </div> 
   </div>  <!-- content -->
 </div> <!-- home-blok -->

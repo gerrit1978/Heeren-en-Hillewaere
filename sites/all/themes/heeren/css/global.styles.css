@@ -2261,16 +2261,7 @@ body.front .home-blok .content .main .text.donkergrijs {
 }
 
 body.front .home-blok .content .main .link {
-  position: absolute;
-  bottom: 20px;
-}
-
-body.front .home-blok .content.rechts .main .link {
-  left: 475px;
-}
-
-body.front .home-blok .content.links .main .link {
-  left: 35px;
+	padding-top: 10px;
 }
 
 body.front .home-blok .content .main .link a.deep-link {
