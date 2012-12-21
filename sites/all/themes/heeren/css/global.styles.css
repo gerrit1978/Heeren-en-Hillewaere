@@ -2274,11 +2274,11 @@ body.front .home-blok .content.links .main .link {
 }
 
 body.front .home-blok .content .main .link a.deep-link {
-  background: #072959; 
+  background: #174381; 
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  border: 1px solid #031227; 
+  border: 1px solid #072959; 
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
@@ -2298,4 +2298,9 @@ body.front .home-blok .content .main .link a.deep-link {
   -moz-transition: background-color 0.15s ease-in-out; 
   -o-transition: background-color 0.15s ease-in-out; 
   transition: background-color 0.15s ease-in-out; 
+}
+
+body.front .home-blok .content .main .link a:hover.deep-link {
+  background: #072959;
+  border :1px solid #041d41;
 }
