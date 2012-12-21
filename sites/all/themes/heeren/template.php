@@ -30,6 +30,7 @@ function heeren_preprocess_page(&$vars) {
 	// node type blog
 	if (isset($vars['node']->type) && $vars['node']->type == 'blog') {
 	  $section_blog = TRUE;
+		$vars['theme_hook_suggestion'] = 'page__blog';
 	}
 	// blog view
 	if (arg(0) == 'blog') {
@@ -39,6 +40,8 @@ function heeren_preprocess_page(&$vars) {
 	if (!$section_blog) {
     $vars['title'] = "";
   }
+  
+  
   
 }
 

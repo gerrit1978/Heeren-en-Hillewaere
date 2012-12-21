@@ -23,7 +23,7 @@
 } 
 
 .block-hc-header .header-content.left {
-  margin-left: 75px;
+  margin-left: 35px;
 }
 
 .block-hc-header .header-icon {
@@ -36,6 +36,7 @@
 .block-hc-header .header-content.wit a,
 .block-hc-header .header-content.wit h1 {
   color: white;
+  margin-bottom: 10px;
 }
 
 .block-hc-header .header-content.donkergrijs, 

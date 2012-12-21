@@ -254,7 +254,7 @@ var {
  */
 #logo {
   position: absolute;
-  left: 65px;
+  left: 25px;
 }
 
 #logo img {
@@ -566,7 +566,7 @@ a:focus {
   float: none;
   margin: 0;
   padding: 5px 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   font-size: 0.875em;
   font-weight: 600;
 }
@@ -1704,6 +1704,7 @@ tr.error {}
   float: left;
   margin-right: 5%;
   margin-bottom: 25px;
+  list-style-image: url(images/bullet_large.jpg);
 }
 
 .blokken .item-list ul li.even {
@@ -1731,7 +1732,7 @@ tr.error {}
 
 .block-menu-block .block-inner {
   background: #94b046;
-  margin: 0 5px;
+  margin: 0;
 }
 
 .block-menu-block .block-inner ul.menu {
@@ -1821,8 +1822,10 @@ tr.error {}
   color: #333333;
 }
 
-.node-type-blog #content {
-  margin-top: 30px
+.node-type-blog h2#blogpost-title {
+  color: black;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .node-type-blog #content #block-system-main {
@@ -2015,10 +2018,13 @@ tr.error {}
 .section-contact #main-content form.webform-client-form .form-submit {
   width: auto; 
   background: #072959; 
-  border: 1px solid #072959; 
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #031227; 
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
   color: white;
   cursor: pointer;
   display: inline-block; 
@@ -2060,6 +2066,11 @@ tr.error {}
   font-size: 2.286em;
   color: #000000;
   font-weight: 300;
+  margin-left: 35px;
+}
+
+#block-webform-client-block-17 .field-name-body {
+  margin-left: 37px;
 }
 
 #block-webform-client-block-17 .block-inner {
@@ -2116,10 +2127,13 @@ tr.error {}
 #block-webform-client-block-17 .webform-client-form .form-submit {
   width: 170px; 
   background: #94b046; 
-  border: 1px solid #94b046; 
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #031227; 
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
   color: white;
   cursor: pointer;
   display: inline-block; 
@@ -2152,6 +2166,11 @@ tr.error {}
 #block-webform-client-block-17 .webform-client-form #edit-submit {
   margin-left: 10px;
   margin-bottom: 15px;
+}
+
+#block-webform-client-block-17 .tabs ul {
+  margin: 0;
+  padding: 0 !important;
 }
 
 #block-webform-client-block-17 .tabs ul li {
@@ -2230,7 +2249,7 @@ body.front .home-blok .content.rechts .main .text {
 }
 
 body.front .home-blok .content.links .main .text {
-  left: 20px;
+  left: 35px;
 }
 
 body.front .home-blok .content .main .text.wit {
@@ -2251,15 +2270,18 @@ body.front .home-blok .content.rechts .main .link {
 }
 
 body.front .home-blok .content.links .main .link {
-  left: 20px;
+  left: 35px;
 }
 
 body.front .home-blok .content .main .link a.deep-link {
   background: #072959; 
-  border: 1px solid #072959; 
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset; 
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #031227; 
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; 
   color: white;
   cursor: pointer;
   display: inline-block; 
