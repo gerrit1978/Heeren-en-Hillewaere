@@ -141,8 +141,12 @@ function heeren_preprocess_node(&$vars) {
 	// add the "newsletter" block to the contact page content - NID hardcoded --> better solution?
 	if ($vars['node']->nid == 4) {
 	  // load the block - hardcoded --> better solution?
-		$block = module_invoke('block', 'block_view', '2');
-		$output = "<div class='newsletter-block'>" . render($block['content']) . "</div>";
+ 		$block_oud_turnhout = views_embed_view('medewerkers', 'block');
+ 		$block_schilde = views_embed_view('medewerkers', 'block_1');
+ 		
+ 		$output = "<div class='medewerkers medewerkers_oud_turnhout'><h2>Medewerkers</h2>" . $block_oud_turnhout . "</div>"
+ 		  . "<div class='medewerkers medewerkers_schilde'><h2>Medewerkers</h2>" . $block_schilde . "</div>";
+
 	  $vars['content']['body'][0]['#suffix'] = $output;
   }
 

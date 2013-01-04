@@ -67,7 +67,6 @@ function ckeditor_install() {
   $arr['default'] = "t";
   $arr['show_toggle'] = "t";
   $arr['popup'] = variable_get('ckeditor_popup', 0) ? "t" : "f";
-  $arr['skin'] = "kama";
   $arr['toolbar'] = "
 [
     ['Source'],
@@ -530,6 +529,39 @@ function ckeditor_update_7003() {
  */
 function ckeditor_update_7004() {
   return _ckeditor_d6_to_d7_migration();
+}
+
+/**
+ * Fixes plugin paths stored in database.
+ * @see http://drupal.org/node/1864760 for more information
+ */
+function ckeditor_update_7005() {
+  $result = db_query("SELECT * FROM {ckeditor_settings} WHERE name <> :name", array(':name' => 'CKEditor Global Profile'))->fetchAllAssoc('name');
+
+  foreach ((array) $result as $profile) {
+    $name = $profile->name;
+    $settings = unserialize($profile->settings);
+
+    $replace = array(
+      "%base_path%%editor_path%" => "%editor_path%",
+      "%base_path%%module_path%" => "%module_path%",
+      "%base_path%%plugin_dir%" => "%plugin_dir%",
+      "%base_path%%plugin_dir_extra%" => "%plugin_dir_extra%"
+    );
+
+    foreach ((array) $settings['loadPlugins'] as $i => $plugin) {
+      $settings['loadPlugins'][$i]['path'] = str_replace(array_keys($replace), array_values($replace), $plugin['path']);
+    }
+
+    $settings = serialize($settings);
+
+    db_update('ckeditor_settings')
+        ->fields(array(
+          'settings' => $settings,
+        ))
+        ->condition('name', $name, '=')
+        ->execute();
+  }
 }
 
 /**

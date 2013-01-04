@@ -190,6 +190,23 @@ function ckeditor_load_skin_options() {
 }
 
 /**
+ * Return default skin for CKEditor
+ *
+ * @return string
+ */
+function ckeditor_default_skin() {
+  $skin_options = ckeditor_load_skin_options();
+  if (array_key_exists('moono', $skin_options)) {
+    return 'moono';
+  }
+  if (array_key_exists('kama', $skin_options)) {
+    return 'kama';
+  }
+  //if any default theme not exists select first from the list
+  return key(reset($skin_options));
+}
+
+/**
  * List of installed CKEditor languages
  *
  * @return array
@@ -537,8 +554,8 @@ function ckeditor_plugins_render($plugins) {
   $render = array();
   $render["%base_path%"] = ckeditor_base_path('relative') . '/';
   $render["%editor_path%"] = ckeditor_path('relative') . '/';
-  $render["%module_path%"] = ckeditor_module_path('relative');
-  $render["%plugin_dir%"] = $render["%module_path%"] . '/plugins/';
+  $render["%module_path%"] = ckeditor_module_path('relative') . '/';
+  $render["%plugin_dir%"] = $render["%module_path%"] . 'plugins/';
   $render["%plugin_dir_extra%"] = ckeditor_plugins_path('relative') . '/';
 
   foreach ((array) $plugins as $i => $plugin) {
@@ -557,9 +574,6 @@ function ckeditor_user_get_setting_default() {
   $default = array(
     'default' => 't',
     'show_toggle' => 't',
-    'popup' => 'f',
-    'skin' => 'kama',
-    'expand' => 't',
     'width' => '100%',
     'lang' => 'en',
     'auto_lang' => 't',
@@ -731,8 +745,7 @@ function ckeditor_profile_settings_compile($global_profile, $profile) {
   $profile_name = $profile->name;
 
   if (user_access('customize ckeditor')) {
-    //foreach (array('default', 'show_toggle', 'popup', 'skin', 'expand', 'width', 'lang', 'auto_lang') as $setting) {
-    foreach (array('default', 'show_toggle', 'skin', 'expand', 'width', 'lang', 'auto_lang') as $setting) {
+    foreach (array('default', 'show_toggle', 'width', 'lang', 'auto_lang') as $setting) {
       $conf[$setting] = ckeditor_user_get_setting($user, $profile, $setting);
     }
   }
@@ -770,7 +783,13 @@ function ckeditor_profile_settings_compile($global_profile, $profile) {
   $settings['shiftEnterMode'] = constant("CKEDITOR_ENTERMODE_" . strtoupper($conf['shift_enter_mode']));
   $settings['toolbarStartupExpanded'] = ( $conf['expand'] == 't' );
   $settings['width'] = $conf['width'];
-  $settings['skin'] = $conf['skin'];
+  //check if skin exists, if not select default one
+  if (isset($global_profile->settings['skin']) && file_exists($editor_local_path . '/skins/' . $global_profile->settings['skin'])) {
+    $settings['skin'] = $global_profile->settings['skin'];
+  }
+  else {
+    $settings['skin'] = ckeditor_default_skin();
+  }
   $settings['format_tags'] = $conf['font_format'];
   $settings['show_toggle'] = $conf['show_toggle'];
   $settings['ss'] = $conf['ss'];
@@ -1210,7 +1229,7 @@ function ckeditor_profile_settings_compile($global_profile, $profile) {
           }
         }
       }
-      if (file_exists($editor_path . '/contents.css')) {
+      if (file_exists($editor_local_path . '/contents.css')) {
         $css_files[] = $editor_path . '/contents.css' . $query_string;
       }
       break;
